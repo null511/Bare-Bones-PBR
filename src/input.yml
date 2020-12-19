@@ -1,0 +1,27 @@
+format: raw
+alpha:
+  texture: albedo
+  color: alpha
+diffuse-red:
+  texture: none
+diffuse-green:
+  texture: none
+diffuse-blue:
+  texture: none
+albedo-red: {}
+albedo-green: {}
+albedo-blue: {}
+height: {}
+occlusion: {}
+normal-x: {}
+normal-y: {}
+normal-z: {}
+specular: {}
+smooth:
+  power: 0.5
+rough:
+  texture: none
+metal: {}
+porosity: {}
+sss: {}
+emissive: {}
