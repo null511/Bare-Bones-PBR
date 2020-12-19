@@ -16,10 +16,10 @@ jobs:
         run: |
           docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
             publish -p "//content/src/lab13-128x.pack.yml" -z "//content/Bare-Bones-PBR-128x.zip"
-      - name: Publish Bare-Bones-PBR-64x
+      - name: Publish Bare-Bones-PBR-32x
         run: |
           docker run --name pixelgraph --rm --mount src="$(pwd)",target=/content,type=bind null511/pixelgraph \
-            publish -p "//content/src/lab13-64x.pack.yml" -z "//content/Bare-Bones-PBR-64x.zip"
+            publish -p "//content/src/lab13-32x.pack.yml" -z "//content/Bare-Bones-PBR-32x.zip"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -38,12 +38,12 @@ jobs:
           asset_path: ./Bare-Bones-PBR-128x.zip
           asset_name: Bare-Bones-PBR-128x.zip
           asset_content_type: application/zip
-      - name: Upload Bare-Bones-PBR-64x
+      - name: Upload Bare-Bones-PBR-32x
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Bare-Bones-PBR-64x.zip
-          asset_name: Bare-Bones-PBR-64x.zip
+          asset_path: ./Bare-Bones-PBR-32x.zip
+          asset_name: Bare-Bones-PBR-32x.zip
           asset_content_type: application/zip
